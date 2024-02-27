@@ -7,20 +7,19 @@ import lombok.Data;
 @Data
 public class InsertDataRequest {
 
-    String requestDate;
-    String systemtype;
-    String systemid;
-    String systemname;
-    String systemtransactions;
-    String systemprivileges;
-    String systemusergroup;
-    String systemlocationgroup;
-    String userid;
-    String userfullname;
-    String userrdofficecode;
-    String userofficecode;
-    String clientlocation;
-    String locationmachinenumber;
-    String tokenid;
+    String ssoType;
+    String systemId;
+    String systemName;
+    String systemTransactions;
+    String systemPrivileges;
+    String systemUserGroup;
+    String systemLocationGroup;
+    String userId;
+    String userFullName;
+    String userRdOfficeCode;
+    String userOfficeCode;
+    String clientLocation;
+    String locationMachineNumber;
+    String tokenId;
 
 }
