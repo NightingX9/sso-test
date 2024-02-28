@@ -23,7 +23,7 @@ public class SsoController {
         this.ssoService = ssoService;
     }
 
-    @PostMapping(value = "/Insert")
+    @PostMapping(value = "/Gentoken")
     public ResponseEntity<ApiResponse> createEmployee(@RequestBody InsertDataRequest insertData) {
         ApiResponse response = new ApiResponse();
         ResponseData data = new ResponseData();
@@ -37,7 +37,7 @@ public class SsoController {
             response.setResponseData(data);
             return ResponseEntity.ok().body(response);
         } catch (Exception e) {
-            response.setResponseCode(HttpStatus.INTERNAL_SERVER_ERROR.value());
+            response.setResponseCode(HttpStatus.BAD_REQUEST.value());
             response.setResponseMessage("ไม่สามารถบันทึกข้อมูลลงฐานข้อมูลได้");
             data.setUserId(insertData.getUserId());
             data.setTokenId(" ");
