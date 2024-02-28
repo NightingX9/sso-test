@@ -1,9 +1,9 @@
-# Sso-Test
+# PCC APITEST Program Specification
 
-# JAVA JDK Version: 17
+#### JAVA JDK Version: 17
 
 
-# Database Properties (PostgreSQL) Version: 15
+#### Database Properties (PostgreSQL) Version: 15
 
 
 Hostname: localhost   
