@@ -1,9 +1,9 @@
-Sso-Test
+#Sso-Test
 
-JAVA JDK Version: 17
+#JAVA JDK Version: 17
 
 
-Database Properties (PostgreSQL)
+#Database Properties (PostgreSQL)
 
 
 Version: 15
