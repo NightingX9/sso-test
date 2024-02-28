@@ -4,7 +4,7 @@ import java.util.Date;
 
 import org.springframework.stereotype.Service;
 
-import com.pcc.model.Sso;
+import com.pcc.model.ssoUserTest;
 import com.pcc.request.InsertDataRequest;
 import com.pcc.repository.SsoRepository;
 
@@ -20,25 +20,25 @@ public class SsoService {
         this.ssoRepository = ssorepository;
     }
 
-    public Sso InsertData(InsertDataRequest insertDataRequest) {
+    public ssoUserTest InsertData(InsertDataRequest insertDataRequest) {
 
-        Sso sso = Sso
+        ssoUserTest sso = ssoUserTest
                 .builder()
                 .requestDate(new Date())
-                .ssoType(insertDataRequest.getSsoType())
-                .systemId(insertDataRequest.getSystemId())
-                .systemName(insertDataRequest.getSystemName())
-                .systemTransactions(insertDataRequest.getSystemTransactions())
-                .systemPrivileges(insertDataRequest.getSystemPrivileges())
-                .systemUserGroup(insertDataRequest.getSystemUserGroup())
-                .systemLocationGroup(insertDataRequest.getSystemLocationGroup())
-                .userId(insertDataRequest.getUserId())
-                .userFullName(insertDataRequest.getUserFullName())
-                .userRdOfficeCode(insertDataRequest.getUserRdOfficeCode())
-                .userOfficeCode(insertDataRequest.getUserOfficeCode())
-                .clientLocation(insertDataRequest.getClientLocation())
-                .locationMachineNumber(insertDataRequest.getLocationMachineNumber())
-                .tokenId(insertDataRequest.getTokenId())
+                .ssotype(insertDataRequest.getSsoType())
+                .systemid(insertDataRequest.getSystemId())
+                .systemname(insertDataRequest.getSystemName())
+                .systemtransactions(insertDataRequest.getSystemTransactions())
+                .systemprivileges(insertDataRequest.getSystemPrivileges())
+                .systemusergroup(insertDataRequest.getSystemUserGroup())
+                .systemlocationgroup(insertDataRequest.getSystemLocationGroup())
+                .userid(insertDataRequest.getUserId())
+                .userfullname(insertDataRequest.getUserFullName())
+                .userrdofficecode(insertDataRequest.getUserRdOfficeCode())
+                .userofficecode(insertDataRequest.getUserOfficeCode())
+                .clientlocation(insertDataRequest.getClientLocation())
+                .locationmachinenumber(insertDataRequest.getLocationMachineNumber())
+                .tokenid(insertDataRequest.getTokenId())
                 .build();
 
         return ssoRepository.save(sso);

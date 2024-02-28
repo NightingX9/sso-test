@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.http.HttpStatus;
 
 import com.pcc.service.SsoService;
-import com.pcc.model.Sso;
+import com.pcc.model.ssoUserTest;
 import com.pcc.request.InsertDataRequest;
 import com.pcc.response.ApiResponse;
 import com.pcc.response.ResponseData;
@@ -29,9 +29,9 @@ public class SsoController {
         ResponseData data = new ResponseData();
         System.out.println(insertData);
         try {
-            Sso sso = ssoService.InsertData(insertData);
-            data.setUserId(sso.getUserId());
-            data.setTokenId(sso.getTokenId());
+            ssoUserTest sso = ssoService.InsertData(insertData);
+            data.setUserId(sso.getUserid());
+            data.setTokenId(sso.getTokenid());
             response.setResponseCode(HttpStatus.OK.value());
             response.setResponseMessage("ทำรายการเรียบร้อย");
             response.setResponseData(data);
