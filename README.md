@@ -1,35 +1,33 @@
-เริ่มต้นด้วยการคลังโค้ด GitHub คุณสามารถทำการคัดลอกโค้ดจาก GitHub ได้โดยใช้คำสั่ง git clone:
+Sso-Test
 
-bash
-Copy code
-git clone <repository_url>
-เมื่อคุณคลังโค้ดลงมาแล้ว ต่อมาคุณต้องสร้างฐานข้อมูลใน PostgreSQL โดยใช้ข้อมูลที่คุณให้ไว้ดังนี้:
+JAVA JDK Version 17
 
-Hostname: localhost
-Port: 5432
-Database: ssotest
-Table: sso_user_test
-Username: ssodev
-Password: sso2022ok
-ใน PostgreSQL คุณสามารถสร้างฐานข้อมูลได้โดยใช้คำสั่ง SQL เช่น:
+Database properties (PostgreSQL) version 15
+Hostname : localhost
+Port : 5432
+Database : ssotest 
+Table : sso_user_test  
+Username : ssodev  
+Password : sso2022ok 
 
-sql
-Copy code
-CREATE DATABASE ssotest;
-เมื่อคุณสร้างฐานข้อมูลแล้ว ต้องการให้โค้ดของคุณเชื่อมต่อกับฐานข้อมูลที่ถูกสร้างใหม่ โดยคุณต้องแก้ไขไฟล์ application.properties หรือ application.yml ในโปรเจ็กต์ของคุณเพื่อกำหนดค่าการเชื่อมต่อฐานข้อมูล PostgreSQL ดังนี้:
+ขั้นตอนที่ 1 clone github code 
 
-properties
-Copy code
-spring.datasource.url=jdbc:postgresql://localhost:5432/ssotest
-spring.datasource.username=ssodev
-spring.datasource.password=sso2022ok
-หลังจากนั้นคุณสามารถรันโค้ดของคุณด้วยคำสั่ง mvn spring-boot:run และทดสอบ API ของคุณได้ที่ http://localhost:8080/swagger-ui/index.html#/
+ขั้นตอนที่ 2 create database ใน PostgreSQL โดยดูตามตัวอย่างที่ให้ไปในข้างต้น
 
-หากคุณต้องการจัดเรียงหรืออัปโหลดโค้ดใหม่ลงใน GitHub คุณสามารถทำได้โดยการเพิ่ม ลบ หรือแก้ไขไฟล์ในโค้ดของคุณ แล้วทำการ commit และ push โค้ดของคุณกลับไปยัง GitHub repository ที่คุณ clone มาได้เช่นกัน โดยใช้คำสั่ง:
-
-bash
-Copy code
-git add .
-git commit -m "เพิ่มหรือแก้ไขโค้ด"
-git push origin master
-อย่าลืมเปลี่ยน "เพิ่มหรือแก้ไขโค้ด" เป็นข้อความที่เกี่ยวข้องกับการเปลี่ยนแปลงที่คุณทำในโค้ดของคุณนะครับ!
+ขั้นตอนที่ 3 กดรันโค้ดและเข้า http://localhost:8080/swagger-ui/index.html#/ เพื่อทดสอบ Api โดยใช้ request ดังนี้
+{
+  "ssoType": "SSOData",
+  "systemId": "VATDEDEV",
+  "systemName": "ระบบบันทึกข้อมูลภาษีมูลค่าเพิ่มทดสอบ)",
+  "systemTransactions": "PRIV-010,PRIV-020,PRIV-040,PRIV-050",
+  "systemPrivileges": "0|0|0|0",
+  "systemUserGroup": "GRP-010,GRP-020,GRP-040",
+  "systemLocationGroup": "CliC001",
+  "userId": "WS233999",
+  "userFullName": "ประสาท จันทร์อังคาร ",
+  "userRdOfficeCode": "01000999",
+  "userOfficeCode": "01001139",
+  "clientLocation": "01001139",
+  "locationMachineNumber": "CLI00000718-9999",
+  "tokenId": "eyJzdWIiOiIxMjM0IiwiYXVkIjpbImFkbWluIl0sImlzcyI6Im1hc29uLm1ldGFtdWcubmV0IiwiZXhwIjoxNTc0NTEyNzY1LCJpYXQiOjE1NjY3MzY3NjUsImp0aSI6ImY3YmZlMzNmLTdiZjctNGViNC04ZTU5LTk5MTc5OWI1ZWI4YSJ9"
+}
