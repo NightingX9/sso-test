@@ -23,7 +23,7 @@ Password: sso2022ok
 ขั้นตอนที่ 1: Clone GitHub Code
 
 
-ขั้นตอนที่ 2: Create Database in PostgreSQL
+ขั้นตอนที่ 2: Create Database in PostgreSQL โดยดูตามข้อมูลตัวอย่างที่ให้ไปในข้างต้น
 
 
 ขั้นตอนที่ 3: รันโค้ดและเข้า http://localhost:8080/swagger-ui/index.html#/ เพื่อทดสอบ API โดยใช้ request ดังนี้:
@@ -32,7 +32,7 @@ Password: sso2022ok
 {  
     "ssoType": "SSOData",  
     "systemId": "VATDEDEV",  
-    "systemName": "ระบบบันทึกข้อมูลภาษีมูลค่าเพิ่มทดสอบ)",  
+    "systemName": "(ระบบบันทึกข้อมูลภาษีมูลค่าเพิ่มทดสอบ)",  
     "systemTransactions": "PRIV-010,PRIV-020,PRIV-040,PRIV-050",  
     "systemPrivileges": "0|0|0|0",  
     "systemUserGroup": "GRP-010,GRP-020,GRP-040",  
